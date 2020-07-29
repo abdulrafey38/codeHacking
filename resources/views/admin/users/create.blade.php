@@ -28,8 +28,8 @@
         {!! Form::select('role_id',[''=>'Choose Option'] + $roles, null , ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('file','File:') !!}
-        {!! Form::file('file',['class'=>'form-control alert-success']) !!}
+        {!! Form::label('photo_id','Photo :') !!}
+        {!! Form::file('photo_id',['class'=>'form-control alert-success']) !!}
     </div>
 
     <div class="form-group">
