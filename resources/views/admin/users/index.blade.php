@@ -10,6 +10,7 @@
     <thead>
     <tr>
         <th>Id</th>
+        <th>Photo</th>
         <th>Name</th>
         <th>Email</th>
         <th>Role</th>
@@ -25,7 +26,14 @@
 
     <tr>
     <td>{{ $user->id }}</td>
-    <td>{{ $user->name }}</td>
+    <td>
+        @if($user->photo)
+        <img src="{{ URL::to('/') }}/images/{{$user->photo->file}}" alt="" height =50 class=" img-rounded">
+        @else
+        <img src="https://image.flaticon.com/icons/png/512/21/21104.png" alt="" height=50 class="img-rounded">
+        @endif
+    </td>
+    <td> <a href="{{ route('users.edit',$user->id) }}">{{ $user->name }}</a></td>
     <td>{{ $user->email }}</td>
     <td>{{ $user->role->name }}</td>
     @if($user->is_active == 0)
