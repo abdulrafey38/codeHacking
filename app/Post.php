@@ -24,6 +24,6 @@ class Post extends Model
 
     public function catogery()
     {
-        return $this->hasOne('App\Catogery');
+        return $this->belongsTo('App\Catogery');
     }
 }

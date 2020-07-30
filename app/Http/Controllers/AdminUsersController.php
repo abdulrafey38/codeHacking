@@ -7,7 +7,6 @@ use App\Http\Requests\UserEdit;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use Auth;
 use App\Role;
 use App\Photo;
 use Illuminate\Support\Facades\URL;

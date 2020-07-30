@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\postcreaterequest ;
-
+use Auth;
 use Illuminate\Http\Request;
 use App\Post;
+use App\Catogery;
 use App\Photo;
 
 class AdminPostsController extends Controller
@@ -27,7 +28,8 @@ class AdminPostsController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $catogery = Catogery::pluck('name','id')->all();
+        return view('admin.posts.create',compact('catogery'));
     }
 
     /**
@@ -38,8 +40,10 @@ class AdminPostsController extends Controller
      */
     public function store(postcreaterequest $request)
     {
+
+
         $input = $request->all();
-        $user = \Auth::user();
+        $user = Auth::user();
         if($file= $request->file('photo_id'))
         {
             $name = time() . $file->getClientOriginalName();
@@ -47,6 +51,7 @@ class AdminPostsController extends Controller
             $photo = Photo::create(['file'=>$name]);
             $input['photo_id']=$photo->id;
         }
+
         $user->posts()->create($input);
         return redirect('admin/posts');
     }
