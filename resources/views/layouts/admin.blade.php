@@ -708,7 +708,7 @@ header {
 }
 }
     </style>
-    
+
 
 </head>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
@@ -725,8 +725,8 @@ header {
                     <ul>
                         <li class="active"><a href="{{ route('users.index') }}"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">All Users</span></a></li>
                         <li><a href="{{ route('users.create') }}"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Create Users</span></a></li>
-                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
-                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calender</span></a></li>
+                        <li><a href="{{ route('posts.index') }}"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">All Posts</span></a></li>
+                        <li><a href="{{ route('posts.create') }}"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Create Posts</span></a></li>
                         <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
                         <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Setting</span></a></li>
                     </ul>
