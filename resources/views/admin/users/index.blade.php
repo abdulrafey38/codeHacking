@@ -6,6 +6,24 @@
 
 <h1>Users</h1>
 
+@if(Session::has('deleted_user'))
+
+<div class="alert alert-danger">
+    <p >{{ session('deleted_user') }}</p>
+</div>
+@elseif(Session::has('create_user'))
+
+<div class="alert alert-success">
+    <p >{{ session('create_user') }}</p>
+</div>
+@elseif(Session::has('update_user'))
+
+<div class="alert alert-success">
+    <p >{{ session('update_user') }}</p>
+</div>
+
+@endif
+
 <table class='table'>
     <thead>
     <tr>

@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\UsersRequest;
 use App\Http\Requests\UserEdit;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
 use App\Photo;
+use Illuminate\Support\Facades\URL;
+
 class AdminUsersController extends Controller
 {
     /**
@@ -15,6 +17,9 @@ class AdminUsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+  
     public function index()
     {
         $users = User::all();
@@ -52,6 +57,7 @@ class AdminUsersController extends Controller
         }
             $input['password'] = bcrypt($request->password);
             User::Create($input);
+            Session::flash('create_user','The User has been created successfully!!');
             return redirect('/admin/users');
 
     }
@@ -110,6 +116,7 @@ class AdminUsersController extends Controller
         }
 
             $user->update($input);
+            Session::flash('update_user','The User has been updated successfully!!');
             return redirect('/admin/users');
 
     }
@@ -122,6 +129,11 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $user = User::find($id);
+        unlink( public_path()."/images/" . $user->photo->file);
+        $user->delete();
+        Session::flash('deleted_user','The User has been deleted successfully!!');
+        return redirect('admin/users');
     }
 }
