@@ -192,7 +192,8 @@ li,ul{
 }
 
 #navigation {
-    background: #0e1a35;
+
+    background: whitesmoke;
 }
 
 #navigation {
@@ -226,7 +227,7 @@ li,ul{
     width: 100%;
 }
 
-.header-top {
+.header-top {name
     margin: 0;
     padding-top: 2px;
 }
@@ -257,7 +258,7 @@ li,ul{
     background: rgba(0, 0, 0, 0) url("../images/plus.png") no-repeat scroll 0 0;
     content: "";
     ;
-    height: 12px;
+    height: 12px;name
     left: 17px;
     position: absolute;
     top: 12px;
@@ -269,7 +270,7 @@ li,ul{
 }
 
 .header-top i {
-    color: #0e1a35;
+    color: whitesmoke;
 }
 
 .icon-info {
@@ -299,12 +300,9 @@ li,ul{
 }
 
 .header-top .dropdown-toggle {
-    color: #0e1a35;
+    color: white;
 }
-
-.header-top .dropdown-menu {
-    border: medium none;
-    left: -85px;
+name
     padding: 17px;
 }
 .view {
@@ -360,8 +358,8 @@ header {
 }
 
 .navi a {
-    border-bottom: 1px solid #0d172e;
-    border-top: 1px solid #0d172e;
+    border-bottom: 1px solid whitesmoke;
+    border-top: 1px solid whitesmoke;name
     color: #ffffff;
     display: block;
     font-size: 17px;
@@ -372,18 +370,14 @@ header {
 
 .navi i {
     margin-right: 15px;
-    color: #5584ff;
+    color: lightblue;
 }
 
-.navi .active a {
-    background: #122143;
-    border-left: 5px solid #5584ff;
-    padding-left: 15px;
-}
+
 
 .navi a:hover {
-    background: #122143 none repeat scroll 0 0;
-    border-left: 5px solid #5584ff;
+    background: white none repeat scroll 0 0;
+    border-left: 5px solid darkblue;
     display: block;
     padding-left: 15px;
 }
@@ -399,11 +393,11 @@ header {
 
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: white;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #0e1a35;
+    background-color: white;
 }
 
 .circle-logo {
@@ -471,17 +465,17 @@ header {
 }
 .sales .dropdown-menu{
     margin: 0px;
-    padding: 0px;
+    padding: 0px;name
     border: 0px;
     border-radius: 8px;
     width: 100%;
-    color: #0e1a35;
+    color: #0e351a;
 }
 .sales .btn-group.open .dropdown-toggle, .btn.active, .btn:active{
     box-shadow: none;
 }
 .sales .dropdown-menu > a {
-    color: #0e1a35;
+    color: white;
     display: inline-block;
     font-weight: 800;
     padding: 9px 0;
@@ -502,7 +496,7 @@ header {
     opacity: 1;
     text-shadow: none;
 }
-.modal-body input {
+.modal-body input {name
     border: 1px solid #d4d9e3;
     font-size: 14px;
     font-weight: 300;
@@ -573,7 +567,7 @@ header {
 
 
 @media only screen and (max-device-width: 767px) {
-    .login-logo img {
+    .login-logo img {name
         margin: 0 auto;
     }
     .login-details .nav-tabs > li {
@@ -707,81 +701,82 @@ header {
     width: 100%;
 }
 }
+
     </style>
 
+    @yield('styles')
 
 </head>
+
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <body class="home">
     <div class="container-fluid display-table">
         <div class="row display-table-row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
-                <div class="logo">
-                    <a hef="home.html"><img src="https://pngimg.com/uploads/letter_a/letter_a_PNG6.png" height= 110 width =50 alt="merkery_logo" class="hidden-xs hidden-sm">
-                        <img src="http://jskrishna.com/work/merkury/images/circle-logo.png" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
-                    </a>
-                </div>
+
+
+
                 <div class="navi">
+
+
                     <ul>
-                        <li class="active"><a href="{{ route('users.index') }}"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">All Users</span></a></li>
-                        <li><a href="{{ route('users.create') }}"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Create Users</span></a></li>
-                        <li><a href="{{ route('posts.index') }}"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">All Posts</span></a></li>
-                        <li><a href="{{ route('posts.create') }}"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Create Posts</span></a></li>
-                        <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
-                        <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Setting</span></a></li>
+                        <li>
+                            <div>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <!-- Left Side Of Navbar -->
+                                <ul class="navbar-nav mr-auto">
+
+                                </ul>
+
+                                <!-- Right Side Of Navbar -->
+                                <ul class="navbar-nav ml-auto">
+                                    <!-- Authentication Links -->
+                                    @guest
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        </li>
+                                        @if (Route::has('register'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                            </li>
+                                        @endif
+                                    @else
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->name }} <span class="caret"></span>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
+                                    @endguest
+                                </ul>
+                    </nav>
+                </div>
+                </li>
+
+                        <li class="active"><a href="{{ route('users.index') }}"><i class="fa fa-users" aria-hidden="true"></i><span class="hidden-xs hidden-sm">All Users</span></a></li>
+                        <li><a href="{{ route('users.create') }}"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Create Users</span></a></li>
+                        <li><a href="{{ route('posts.index') }}"><i class="fa fa-pencil-square" aria-hidden="true"></i><span class="hidden-xs hidden-sm">All Posts</span></a></li>
+                        <li><a href="{{ route('posts.create') }}"><i class="fa fa-upload" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Create Posts</span></a></li>
+                        <li><a href="{{ route('catogeries.index') }}"><i class="fa fa-cloud" aria-hidden="true"></i><span class="hidden-xs hidden-sm">All Catogeries</span></a></li>
+                        <li><a href="{{ route('media.index') }}"><i class="fa fa-music" aria-hidden="true"></i><span class="hidden-xs hidden-sm">All Media</span></a></li>
+                        <li><a href="{{ route('media.create') }}"><i class="fa fa-video-camera" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Upload Media</span></a></li>
+                        
                     </ul>
                 </div>
             </div>
-            <div>
-                <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-                    <div class="container">
 
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <!-- Left Side Of Navbar -->
-                            <ul class="navbar-nav mr-auto">
-
-                            </ul>
-
-                            <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav ml-auto">
-                                <!-- Authentication Links -->
-                                @guest
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                    </li>
-                                    @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                        </li>
-                                    @endif
-                                @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }} <span class="caret"></span>
-                                        </a>
-
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li>
-                                @endguest
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
                 <div class="user-dashboard">
                     @yield('content')
                 </div>
@@ -790,6 +785,8 @@ header {
 
     </div>
 
-
+    @yield('scripts')
 
 </body>
+
+

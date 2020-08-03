@@ -31,4 +31,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware(['admin'])->group(function () {
     Route::resource('/admin/users', 'AdminUsersController');//->middleware('admin');
     Route::resource('/admin/posts', 'AdminPostsController');
+    Route::resource('admin/catogeries', 'AdminCatogeriesController');
+    Route::resource('/admin/media', 'AdminMediaController');
+    Route::any('/admin/media/upload', ['as'=>'media.upload', 'uses'=>'AdminMediaController@store']);
+    Route::get('/home', 'HomeController@index')->name('home');
 });
